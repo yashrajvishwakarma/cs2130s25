@@ -1,0 +1,18 @@
+subq   $0x8, %rsp -> subtract 8 from rsp
+movq   %rsi, %rdx -> move rsi into rdx
+leaq   0x4(%rsi), %rcx -> rcx = rsi + 4
+leaq   0x14(%rsi), %rax -> rax = rsi + 0x14
+pushq  %rax -> push rax into stack
+leaq   0x10(%rsi), %rax -> rax = rsi + 0x10
+pushq  %rax -> push new rax into stack
+leaq   0xc(%rsi), %r9 -> r9 = rsi + 0xc -> 18?
+leaq   0x8(%rsi), %r8 -> r8 = rsi + 0x8 -> 14?
+leaq   0x164d(%rip), %rsi -> rsi = rip + 0x164d
+movl   $0x0, %eax -> move 0 to eax
+callq  0x555555556330            ; ___lldb_unnamed_symbol158 + 288
+addq   $0x10, %rsp -> rsp = rsp + 0x10
+cmpl   $0x5, %eax -> compare eax and 0x5
+jle    0x555555556edc            ; <+64>
+addq   $0x8, %rsp -> add 8 to rsp
+retq   
+callq  0x555555556e5a
